@@ -1,6 +1,6 @@
 
 # VLC-Player-with-Seekbar-Hover-Preview-
-This is an unofficial VLC Modified repo with Seekbar Hover Preview feature implemented.
+This is an unofficial VLC Modified repo with Seekbar Hover Preview feature almost implemented.
 
 
 This Project is not yet completed
