@@ -1,0 +1,1221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SPrefsSeekbarPreview</class>
+ <widget class="QWidget" name="SPrefsSeekbarPreview">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>682</width>
+    <height>679</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Seekbar Preview Settings</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="tabPosition">
+         <enum>QTabWidget::North</enum>
+     </property>
+     <widget class="QWidget" name="generalTab">
+      <attribute name="title">
+      <string>General</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_generalTab">
+      <item>
+         <widget class="QGroupBox" name="generalGroup">
+         <property name="title">
+         <string>General</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayoutGeneral">
+         <item>
+            <widget class="QCheckBox" name="enableSeekbarPreview">
+            <property name="text">
+            <string>Enable seekbar preview</string>
+            </property>
+            <property name="checked">
+            <bool>false</bool>
+            </property>
+            </widget>
+         </item>
+         <item>
+            <layout class="QHBoxLayout">
+            <item>
+            <widget class="QPushButton" name="resetToDefaults">
+               <property name="text">
+               <string>Reset Seekbar Preview Preferences</string>
+               </property>
+            </widget>
+            </item>
+            <item>
+            <spacer>
+               <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+               <size><width>40</width><height>20</height></size>
+               </property>
+            </spacer>
+            </item>
+            </layout>
+         </item>
+         <item>
+            <spacer>
+            <property name="orientation">
+            <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+            <size><width>20</width><height>40</height></size>
+            </property>
+            </spacer>
+         </item>
+         </layout>
+         </widget>
+      </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="frameTab">
+      <attribute name="title">
+       <string>Frame Extraction</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_frameTab">
+       <item>
+      <widget class="QGroupBox" name="frameExtractionGroup">
+       <property name="title">
+        <string>Frame Extraction</string>
+       </property>
+       <layout class="QFormLayout" name="formLayoutFE">
+        <item row="0" column="0">
+         <widget class="QLabel" name="labelSeekMode">
+        <property name="text">
+         <string>Seek Mode</string>
+        </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+             <widget class="QWidget" name="seekModeContainer" native="true">
+               <layout class="QVBoxLayout" name="seekModeLayout">
+                <property name="leftMargin">
+                  <number>0</number>
+                </property>
+                <property name="topMargin">
+                  <number>0</number>
+                </property>
+                <property name="rightMargin">
+                  <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                  <number>0</number>
+                </property>
+                <item>
+                  <widget class="QRadioButton" name="seekModeExact">
+                   <property name="text">
+                     <string>Exact frame</string>
+                   </property>
+                  </widget>
+                </item>
+                <item>
+                  <widget class="QLabel" name="seekModeExactDesc">
+                   <property name="text">
+                     <string>Slower extraction; the farther the timestamp is from the previous I-frame, the longer it can take.</string>
+                   </property>
+                   <property name="styleSheet">
+                     <string>color: #777777;</string>
+                   </property>
+                   <property name="wordWrap">
+                     <bool>true</bool>
+                   </property>
+                  </widget>
+                </item>
+                <item>
+                  <widget class="QRadioButton" name="seekModeIframe">
+                   <property name="text">
+                     <string>Nearest I-frame</string>
+                   </property>
+                  </widget>
+                </item>
+                <item>
+                  <widget class="QLabel" name="seekModeIframeDesc">
+                   <property name="text">
+                     <string>Faster extraction; the preview may be offset depending on the video's keyframe spacing.</string>
+                   </property>
+                   <property name="styleSheet">
+                     <string>color: #777777;</string>
+                   </property>
+                   <property name="wordWrap">
+                     <bool>true</bool>
+                   </property>
+                  </widget>
+                </item>
+                <item>
+                  <widget class="QRadioButton" name="seekModeDynamic">
+                   <property name="text">
+                     <string>Dynamic</string>
+                   </property>
+                  </widget>
+                </item>
+                <item>
+                  <widget class="QWidget" name="dynamicSeekContainer" native="true">
+                   <layout class="QHBoxLayout" name="dynamicSeekLayout">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="dynamicSeekPrefix">
+                      <property name="text">
+                       <string>Use exact seeking only when the nearest I-frame is more than</string>
+                      </property>
+                      <property name="styleSheet">
+                       <string>color: #777777;</string>
+                      </property>
+                      <property name="sizePolicy">
+                        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                        </sizepolicy>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QSpinBox" name="dynamicSeekThreshold">
+                      <property name="minimum">
+                       <number>1</number>
+                      </property>
+                      <property name="maximum">
+                       <number>60</number>
+                      </property>
+                      <property name="value">
+                       <number>10</number>
+                      </property>
+                      <property name="maximumWidth">
+                       <number>50</number>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="dynamicSeekSuffix">
+                      <property name="text">
+                       <string>seconds away from the hovered position.</string>
+                      </property>
+                      <property name="styleSheet">
+                       <string>color: #777777;</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                </item>
+               </layout>
+             </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="labelCacheLimit">
+        <property name="text">
+             <string>Cache Limit (MB)</string>
+        </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+             <widget class="QWidget" name="cacheLimitContainer" native="true">
+              <layout class="QHBoxLayout" name="cacheLimitLayout">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QSlider" name="cacheLimit">
+              <property name="minimum">
+               <number>10</number>
+              </property>
+              <property name="maximum">
+               <number>300</number>
+              </property>
+              <property name="singleStep">
+               <number>10</number>
+              </property>
+              <property name="pageStep">
+               <number>10</number>
+              </property>
+              <property name="tickPosition">
+               <enum>QSlider::TicksBelow</enum>
+              </property>
+              <property name="tickInterval">
+               <number>10</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="cacheLimitValue">
+              <property name="minimumSize">
+               <size>
+                <width>52</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+              </layout>
+             </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="labelFrameRes">
+        <property name="text">
+         <string>Frame Resolution</string>
+        </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+             <widget class="QWidget" name="frameResolutionContainer" native="true">
+               <layout class="QVBoxLayout" name="frameResolutionLayout">
+                <property name="leftMargin">
+                  <number>0</number>
+                </property>
+                <property name="topMargin">
+                  <number>0</number>
+                </property>
+                <property name="rightMargin">
+                  <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                  <number>0</number>
+                </property>
+                <item>
+                 <widget class="QWidget" name="frameResolutionRowWidget" native="true">
+                  <layout class="QHBoxLayout" name="frameResolutionRow">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QSlider" name="frameResolution">
+                     <property name="minimum">
+                      <number>0</number>
+                     </property>
+                     <property name="maximum">
+                      <number>5</number>
+                     </property>
+                     <property name="tickPosition">
+                      <enum>QSlider::TicksBelow</enum>
+                     </property>
+                     <property name="tickInterval">
+                      <number>1</number>
+                     </property>
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="frameResolutionValue">
+                     <property name="minimumSize">
+                      <size>
+                       <width>52</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignRight|Qt::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+             </widget>
+        </item>
+       </layout>
+      </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="previewTab">
+      <attribute name="title">
+       <string>Preview Image</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_previewTab">
+       <item>
+        <widget class="QGroupBox" name="previewScalingGroup">
+         <property name="title">
+          <string>Preview Scaling</string>
+         </property>
+         <layout class="QFormLayout" name="formLayoutPreviewScaling">
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelBoxSize">
+            <property name="text">
+             <string>Box Size (px)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QWidget" name="boxSizeContainer" native="true">
+            <layout class="QHBoxLayout" name="boxSizeLayout">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QSlider" name="boxSize">
+               <property name="minimum">
+                <number>100</number>
+               </property>
+               <property name="maximum">
+                <number>600</number>
+               </property>
+               <property name="singleStep">
+                <number>10</number>
+               </property>
+               <property name="pageStep">
+                <number>50</number>
+               </property>
+               <property name="tickPosition">
+                <enum>QSlider::TicksBelow</enum>
+               </property>
+               <property name="tickInterval">
+                <number>50</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="boxSizeValue">
+               <property name="minimumSize">
+                <size>
+                 <width>52</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="borderSettingsGroup">
+         <property name="title">
+          <string>Border Settings</string>
+         </property>
+         <layout class="QFormLayout" name="formLayoutBorderSettings">
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelBorderWidth">
+            <property name="text">
+             <string>Border Width (px)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QWidget" name="borderWidthContainer" native="true">
+            <layout class="QHBoxLayout" name="borderWidthLayout">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QSlider" name="previewBorderWidth">
+               <property name="minimum">
+                <number>0</number>
+               </property>
+               <property name="maximum">
+                <number>100</number>
+               </property>
+               <property name="tickPosition">
+                <enum>QSlider::TicksBelow</enum>
+               </property>
+               <property name="tickInterval">
+                <number>10</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="previewBorderWidthValue">
+               <property name="minimumSize">
+                <size>
+                 <width>52</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="labelBorderColor">
+            <property name="text">
+             <string>Border Color</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="previewBorderColor">
+            <property name="text">
+             <string>Choose Color...</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="labelBorderRadius">
+            <property name="text">
+             <string>Border Radius (px)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QWidget" name="borderRadiusContainer" native="true">
+            <layout class="QHBoxLayout" name="borderRadiusLayout">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QSlider" name="previewBorderRadius">
+               <property name="minimum">
+                <number>0</number>
+               </property>
+               <property name="maximum">
+                <number>200</number>
+               </property>
+               <property name="tickPosition">
+                <enum>QSlider::TicksBelow</enum>
+               </property>
+               <property name="tickInterval">
+                <number>10</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="previewBorderRadiusValue">
+               <property name="minimumSize">
+                <size>
+                 <width>52</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacerPreviewTab">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size><width>20</width><height>40</height></size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="timestampTab">
+      <attribute name="title">
+       <string>Timestamp</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_timestampTab">
+       <item>
+      <widget class="QGroupBox" name="fontSettingsGroup">
+       <property name="title">
+        <string>Font Settings</string>
+       </property>
+       <layout class="QFormLayout" name="formLayoutFontSettings">
+        <item row="0" column="0">
+         <widget class="QLabel" name="labelFontSizeScale">
+          <property name="text">
+           <string>Font Size Scale</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QWidget" name="fontSizeScaleContainer" native="true">
+          <layout class="QHBoxLayout" name="fontSizeScaleLayout">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QSlider" name="fontSizeScale">
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>40</number>
+             </property>
+             <property name="tickPosition">
+              <enum>QSlider::TicksBelow</enum>
+             </property>
+             <property name="tickInterval">
+              <number>1</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="fontSizeScaleValue">
+             <property name="minimumSize">
+              <size>
+               <width>52</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="labelTextCol">
+          <property name="text">
+           <string>Color</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="textColor">
+          <property name="text">
+           <string>Choose Color...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+       </item>
+       <item>
+      <widget class="QGroupBox" name="backgroundBorderGroup">
+       <property name="title">
+        <string>Background &amp; Border</string>
+       </property>
+       <layout class="QFormLayout" name="formLayoutBackgroundBorder">
+        <item row="0" column="0">
+         <widget class="QLabel" name="labelTSBgColor">
+          <property name="text">
+           <string>Background Color</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="timestampBackgroundColor">
+          <property name="text">
+           <string>Choose Color...</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="labelTSBorderWidth">
+          <property name="text">
+           <string>Border Width</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QWidget" name="timestampBorderWidthContainer" native="true">
+          <layout class="QHBoxLayout" name="timestampBorderWidthLayout">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QSlider" name="timestampBorderWidth">
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>20</number>
+             </property>
+             <property name="tickPosition">
+              <enum>QSlider::TicksBelow</enum>
+             </property>
+             <property name="tickInterval">
+              <number>1</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="timestampBorderWidthValue">
+             <property name="minimumSize">
+              <size>
+               <width>52</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="labelTSBorderRadius">
+          <property name="text">
+           <string>Border Radius</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QWidget" name="timestampBorderRadiusContainer" native="true">
+          <layout class="QHBoxLayout" name="timestampBorderRadiusLayout">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QSlider" name="timestampBorderRadius">
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>20</number>
+             </property>
+             <property name="tickPosition">
+              <enum>QSlider::TicksBelow</enum>
+             </property>
+             <property name="tickInterval">
+              <number>1</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="timestampBorderRadiusValue">
+             <property name="minimumSize">
+              <size>
+               <width>52</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="labelTSBorderColor">
+          <property name="text">
+           <string>Border Color</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QPushButton" name="timestampBorderColor">
+          <property name="text">
+           <string>Choose Color...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+       </item>
+       <item>
+      <widget class="QGroupBox" name="spacingInsideGroup">
+       <property name="title">
+        <string>Spacing (inside)</string>
+       </property>
+       <layout class="QFormLayout" name="formLayoutSpacingInside">
+        <item row="0" column="0">
+         <widget class="QLabel" name="labelPaddingY">
+          <property name="text">
+           <string>Padding Y</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QWidget" name="paddingYContainer" native="true">
+          <layout class="QHBoxLayout" name="paddingYLayout">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QSlider" name="paddingY">
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="tickPosition">
+              <enum>QSlider::TicksBelow</enum>
+             </property>
+             <property name="tickInterval">
+              <number>5</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="paddingYValue">
+             <property name="minimumSize">
+              <size>
+               <width>52</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="labelPaddingX">
+          <property name="text">
+           <string>Padding X</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QWidget" name="paddingXContainer" native="true">
+          <layout class="QHBoxLayout" name="paddingXLayout">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QSlider" name="paddingX">
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="tickPosition">
+              <enum>QSlider::TicksBelow</enum>
+             </property>
+             <property name="tickInterval">
+              <number>5</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="paddingXValue">
+             <property name="minimumSize">
+              <size>
+               <width>52</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+       </item>
+       <item>
+      <widget class="QGroupBox" name="spacingOutsideGroup">
+       <property name="title">
+        <string>Spacing (outside)</string>
+       </property>
+       <layout class="QFormLayout" name="formLayoutSpacingOutside">
+        <item row="0" column="0">
+         <widget class="QLabel" name="labelTopMargin">
+          <property name="text">
+           <string>Margin Top</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QWidget" name="topMarginContainer" native="true">
+          <layout class="QHBoxLayout" name="topMarginLayout">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QSlider" name="topMargin">
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>80</number>
+             </property>
+             <property name="tickPosition">
+              <enum>QSlider::TicksBelow</enum>
+             </property>
+             <property name="tickInterval">
+              <number>4</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="topMarginValue">
+             <property name="minimumSize">
+              <size>
+               <width>52</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="labelBottomMargin">
+          <property name="text">
+           <string>Margin Bottom</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QWidget" name="bottomMarginContainer" native="true">
+          <layout class="QHBoxLayout" name="bottomMarginLayout">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QSlider" name="bottomMargin">
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>80</number>
+             </property>
+             <property name="tickPosition">
+              <enum>QSlider::TicksBelow</enum>
+             </property>
+             <property name="tickInterval">
+              <number>4</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="bottomMarginValue">
+             <property name="minimumSize">
+              <size>
+               <width>52</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacerTimestampTab">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size><width>20</width><height>40</height></size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="behaviourTab">
+      <attribute name="title">
+       <string>Behaviour</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_behaviourTab">
+       <item>
+      <widget class="QGroupBox" name="behaviourGroup">
+       <property name="title">
+        <string>Behaviour</string>
+       </property>
+       <layout class="QFormLayout" name="formLayoutB">
+        <item row="0" column="0">
+        <widget class="QCheckBox" name="interactivePreview">
+         <property name="text">
+          <string>Interactive Preview</string>
+         </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+        <widget class="QLabel" name="interactivePreviewDesc">
+         <property name="text">
+          <string>When enabled, the preview box is included in the hover area</string>
+         </property>
+         <property name="styleSheet">
+          <string>color: #777777;</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+        <widget class="QCheckBox" name="handCursorOnHover">
+         <property name="text">
+          <string>Hand Cursor on Hover</string>
+         </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="labelShowDelay">
+         <property name="text">
+          <string>Show Delay (ms)</string>
+         </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QWidget" name="showDelayContainer" native="true">
+          <layout class="QHBoxLayout" name="showDelayLayout">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QSlider" name="showDelay">
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>3000</number>
+             </property>
+             <property name="singleStep">
+              <number>50</number>
+             </property>
+             <property name="pageStep">
+              <number>250</number>
+             </property>
+             <property name="tickPosition">
+              <enum>QSlider::TicksBelow</enum>
+             </property>
+             <property name="tickInterval">
+              <number>50</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="showDelayValue">
+             <property name="minimumSize">
+              <size>
+               <width>68</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignVCenter</set>
+             </property>
+             <property name="text">
+              <string>0 ms</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    </item>
+    </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

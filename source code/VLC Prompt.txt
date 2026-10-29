@@ -1,0 +1,51 @@
+I'm working in a VLC repo and adding a seekbar hover preview feature.
+
+There are four phases.
+
+1. Preferences section — COMPLETE.
+
+- The preferences UI has separate tabs for:
+  - General
+  - Frame Extraction
+  - Preview Image
+  - Timestamp
+  - Behaviour
+
+- Important files:
+  1. sprefs_seekbar_preview.ui
+     - Qt Designer UI for the whole seekbar preview preferences panel.
+     - Contains the tabs and all widgets for General, Frame Extraction, Preview Image, Timestamp, and Behaviour.
+  2. simple_preferences_seekbar.cpp
+     - Wires widgets to VLC config options.
+     - Updates live value labels.
+     - Holds the seekbar reset helpers.
+     - Contains SeekbarPreviewPreferences loadSeekbarPreviewPreferences(intf_thread_t *p_intf) which returns all the preferences as a struct.
+  3. simple_preferences_seekbar.hpp
+     - Declares the seekbar setup and reset helper functions.
+  4. qt.cpp
+     - Registers the actual VLC config options, defaults, and ranges for all seekbar preview settings.
+
+These 4 files above are LOCKED. Do not touch them unless I explicitly say so.
+
+2. Timestamp tooltip phase — MOSTLY COMPLETE.
+
+- All custom work for this lives in a new folder: modules/gui/qt/util/seekbarpreviewfiles/
+  1. seekbar_time_tooltip.hpp / seekbar_time_tooltip.cpp
+     - class SeekbarTimeTooltip — a fully independent, standalone custom tooltip class. Does not inherit from VLC's original TimeTooltip.
+  2. tooltip_bridge.hpp / tooltip_bridge.cpp
+     - class TooltipBridge (a QWidget) — the only thing wired into input_slider.cpp. Owns one instance each of the original TimeTooltip and our SeekbarTimeTooltip, and live-switches between them based on the "seekbar-preview" preference.
+
+- modules/gui/qt/util/timetooltip.cpp / .hpp are VLC's ORIGINAL files, untouched. Do not touch these unless I explicitly ask.
+
+- modules/gui/qt/util/input_slider.cpp / .hpp — the only place that uses the tooltip, via TooltipBridge.
+
+3. Preview image box phase — STARTING NOW.
+- Will work with a dummy image first, focused on preview box styling and position.
+- New files for this will likely go in modules/gui/qt/util/seekbarpreviewfiles/ too.
+
+4. Real frame extraction phase — NOT STARTED.
+- Will replace the dummy image with actual extracted video frames.
+
+Right now I also want to add an on/off toggle button for this seekbar preview feature to VLC's Qt control bar — both the windowed/maximized control bar and the fullscreen control bar (these are two separate control bars in VLC).
+
+This is just a context prompt. You do not need to give any code in chat. Everything will be done directly to the code files using your tools. Do the changes only when I explicitly ask you to.

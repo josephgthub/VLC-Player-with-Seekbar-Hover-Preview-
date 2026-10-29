@@ -1,0 +1,10 @@
+till the tell me this.
+
+i am acutally mainly focusing on windows only, and ubuntu version is just for testing while developing.
+
+and also i want to upload to github, but only the libqt_plugin.dll, as it is the only dll which changes, and also i have tested if replacing this dll in official repo works or not, and it worked.
+
+now my doubt is that, we need ffmpeg libs for showing previews, but we can't use the ffmpeg libs which vlc uses because it seems vlc is not exporting all ffmpeg functions to be used by other dlls i guess.
+
+so i want to embed ffmpeg libs in the libqt dll itself.
+so my doubt is that, is it easy? i actually want to download latest ffmpeg code instead of the old one, so it will be latest with bugs fixed. my preview generator engine files are independent of vlc, my files has a simple api type function which the seekbarpreview.cpp file can call it with the video path and timestamp etc variables and my functions will return the frame, but my problem is how to use ffmpeg

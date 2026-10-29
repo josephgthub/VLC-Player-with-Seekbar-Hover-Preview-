@@ -1,0 +1,36 @@
+{
+  "configurations": [
+    {
+      "name": "Linux",
+      "intelliSenseMode": "linux-gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "${workspaceFolder}/include",
+        "${workspaceFolder}/modules/**",
+        "${workspaceFolder}/compat",
+        "${workspaceFolder}/contrib/**",
+        "/usr/include",
+        "/usr/include/x86_64-linux-gnu",
+        "/usr/include/x86_64-linux-gnu/qt5",
+        "/usr/include/x86_64-linux-gnu/qt5",
+        "/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
+        "/usr/include/x86_64-linux-gnu/qt5/QtCore",
+        "/usr/include/x86_64-linux-gnu/qt5/QtGui",
+        "/usr/include/x86_64-linux-gnu/libavformat",
+        "/usr/include/x86_64-linux-gnu/libavcodec",
+        "/usr/include/x86_64-linux-gnu/libswscale",
+        "/usr/include/x86_64-linux-gnu/libavutil"
+      ],
+      "browse": {
+        "path": [
+          "${workspaceFolder}/**"
+        ],
+        "limitSymbolsToIncludedHeaders": true
+      }
+    }
+  ],
+  "version": 4
+}

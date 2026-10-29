@@ -1,0 +1,46 @@
+<svg
+  width="48"
+  height="48"
+  viewBox="0 0 48 48"
+  xmlns="http://www.w3.org/2000/svg"
+>
+    <g transform="translate(0, 5) scale(0.9)">
+        <!-- Rectangle "lens" instead of circle -->
+        <rect
+            x="5"
+            y="3"
+            width="38"
+            height="20"
+            rx="2"
+            fill="none"
+            stroke="#747474"
+            stroke-width="5"
+        />
+
+        <!-- Play button inside -->
+        <polygon
+            points="19,6 19,20 31,13"
+            fill="#747474"
+        />
+    </g>
+
+    <!-- Seekbar -->
+    <line
+        x1="4"
+        y1="40"
+        x2="44"
+        y2="40"
+        stroke="#747474"
+        stroke-width="4"
+        stroke-linecap="round"
+    />
+
+    <!-- Cursor / hover tick on seekbar -->
+    <circle
+        cx="15"
+        cy="40"
+        r="4"
+        fill="#747474"
+    />
+
+</svg>
